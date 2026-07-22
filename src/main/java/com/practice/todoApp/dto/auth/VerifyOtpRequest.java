@@ -1,0 +1,26 @@
+package com.practice.todoApp.dto.auth;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+
+public class VerifyOtpRequest {
+
+    @NotBlank(message = "OTP is required")
+    @Size(min = 6, max = 6, message = "OTP must be 6 digits")
+    private String otp;
+
+    public VerifyOtpRequest() {
+    }
+
+    public VerifyOtpRequest(String otp) {
+        this.otp = otp;
+    }
+
+    public String getOtp() {
+        return otp;
+    }
+
+    public void setOtp(String otp) {
+        this.otp = otp;
+    }
+}
